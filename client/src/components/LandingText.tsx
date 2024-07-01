@@ -6,11 +6,14 @@ const LandingText = ({ activate }: { activate: boolean }) => {
     const surName = ["o", "w", "e", "l", "l"];
     const [runText, setRunText] = useState(false);
 
+
     const showText = (arr: string[]) => {
         return arr.map((letter: string, idx: number) => (
             <span key={letter + "-" + idx}>{letter}</span>
         ))
     }
+
+
     let timer = timerId;
 
     useEffect(() => {

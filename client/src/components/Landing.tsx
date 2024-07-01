@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { timerId } from "../types/index";
 import LandingText from "./LandingText";
 
+
 const Landing = () => {
     const [addText, setAddText] = useState(false);
     let timer = timerId;

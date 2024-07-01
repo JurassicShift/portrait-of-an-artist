@@ -18,13 +18,15 @@
 }
 
 .landing {
+	background-image: linear-gradient(#fff, #d9d9d9);
+	height: 100vh;
 	&__content {
 		position: absolute;
 		top: 30%;
 		left: 50%;
 		font-family: $--ff-regular;
 		font-size: 50px;
-		margin: 0 -16px 0 -16px;
+		margin: 0 -18px 0 -18px;
 		&--open {
 			@include animateBrackets(-100px, "open");
 		}

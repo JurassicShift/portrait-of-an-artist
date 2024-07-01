@@ -1,12 +1,13 @@
 .landingText {
 	position: absolute;
-	top: -40%;
+	top: -45%;
 	left: 50%;
 	font-size: 50px;
-	margin: 0 -100px 0 -100px;
+
+	margin: 0 -105px 0 -105px;
 	z-index: 99;
-	// letter-spacing: 1px;
 	opacity: 0;
+	letter-spacing: 2px;
 	animation: showText 200ms forwards;
 	span {
 		opacity: 0;
