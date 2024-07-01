@@ -5,6 +5,7 @@ export default defineConfig({
     test: {
         globals: true,
         environment: 'node',
+        setupFiles: ['./src/tests/Server.test.ts'],
         coverage: {
             provider: 'istanbul'
         },
@@ -12,3 +13,4 @@ export default defineConfig({
         exclude: ['**/dist/**', '**/node_modules/**'],
     },
 })
+

@@ -3,4 +3,11 @@
 	src: url("../../fonts/Avenir\ Regular.ttf");
 }
 
-$--ff-regular: "avenirRegular";
+@font-face {
+	font-family: avenirHeavy;
+	src: url("../../fonts/Avenir\ Heavy.ttf");
+}
+
+$--ff-regular: avenirRegular;
+$--ff-heavy: avenirHeavy;
+$--fc-regular: #000;

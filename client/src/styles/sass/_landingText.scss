@@ -1,0 +1,24 @@
+.landingText {
+	position: absolute;
+	top: -40%;
+	left: 50%;
+	font-size: 50px;
+	margin: 0 -100px 0 -100px;
+	z-index: 99;
+	// letter-spacing: 1px;
+	opacity: 0;
+	animation: showText 200ms forwards;
+	span {
+		opacity: 0;
+		animation: showText 500ms forwards;
+	}
+}
+
+@keyframes showText {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

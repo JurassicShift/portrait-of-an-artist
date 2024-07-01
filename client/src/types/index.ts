@@ -1,0 +1,1 @@
+export let timerId: ReturnType<typeof setTimeout>;

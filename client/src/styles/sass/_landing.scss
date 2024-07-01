@@ -1,0 +1,35 @@
+@mixin animateBrackets($distance, $name) {
+	display: inline-block;
+	color: #a435f0;
+	animation: #{$name} 0.75s linear 0.5s forwards;
+	$distanceX: if($name == "open", -50px, 50px);
+	$totalX: $distance + $distanceX;
+	@keyframes #{$name} {
+		0% {
+			transform: translate(0px, 0px);
+		}
+		30% {
+			transform: translateX($distanceX);
+		}
+		100% {
+			transform: translate($totalX, $distance);
+		}
+	}
+}
+
+.landing {
+	&__content {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		font-family: $--ff-regular;
+		font-size: 50px;
+		margin: 0 -16px 0 -16px;
+		&--open {
+			@include animateBrackets(-100px, "open");
+		}
+		&--close {
+			@include animateBrackets(100px, "close");
+		}
+	}
+}

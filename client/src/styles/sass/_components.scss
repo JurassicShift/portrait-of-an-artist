@@ -1,3 +1,11 @@
-.test__header {
+.body {
 	font-family: $--ff-regular;
+	color: $--fc-regular;
+	font-size: 16px;
 }
+
+@import "utilities";
+
+@import "landing";
+
+@import "landingText";
