@@ -1,14 +1,16 @@
 import { screen, render } from "@testing-library/react";
-import App from "../App";
+import { store } from '../store/store.ts';
+import { Provider } from 'react-redux';
+import App from "../components/App";
+// import Landing from "../components/Landing.tsx"
 
 describe("App tests", () => {
-    it("should render the title", () => {
-        render(<App />);
+    it("should contain Landing component", () => {
+        render(<Provider store={store}>
+            <App />
+        </Provider>);
 
-        expect(
-            screen.getByRole("heading", {
-                level: 1,
-            })
-        ).toHaveTextContent("Megan Portfolio");
+        const landingComponent = screen.getByText("[", { selector: "span.landing__content--open" });
+        expect(landingComponent).toBeInTheDocument();
     });
 });

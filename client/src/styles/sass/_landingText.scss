@@ -2,16 +2,14 @@
 	position: absolute;
 	top: -45%;
 	left: 50%;
-	font-size: 50px;
-
 	margin: 0 -105px 0 -105px;
 	z-index: 99;
 	opacity: 0;
-	letter-spacing: 2px;
 	animation: showText 200ms forwards;
+
 	span {
 		opacity: 0;
-		animation: showText 500ms forwards;
+		animation: showSpanText 750ms ease-in forwards;
 	}
 }
 
@@ -21,5 +19,29 @@
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes showSpanText {
+	0% {
+		opacity: 0;
+	}
+	33% {
+		opacity: 0.5;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes completeSpanText {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0.8;
 	}
 }

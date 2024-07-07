@@ -1,0 +1,54 @@
+@mixin burgerStyle {
+	position: absolute;
+	margin: 10px 0;
+	height: 1px;
+	width: 100%;
+	border: 1px solid #fff;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	font-family: $--ff-light;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	width: 100%;
+	padding: 5vw 6vw;
+
+	&__text {
+		font-size: 19px;
+		letter-spacing: 2px;
+	}
+
+	&__button {
+		position: relative;
+		top: 10px;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		height: 35px;
+		width: 35px;
+
+		&--top {
+			@include burgerStyle;
+			top: -12px;
+		}
+		&--patty {
+			@include burgerStyle;
+			top: 0px;
+		}
+		&--bottom {
+			@include burgerStyle;
+			top: 12px;
+		}
+	}
+}
+
+.animate__top--open {
+}
+
+.animate__top--close {
+}

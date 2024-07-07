@@ -1,18 +1,17 @@
 @mixin animateBrackets($distance, $name) {
 	display: inline-block;
-	color: #a435f0;
-	animation: #{$name} 0.75s linear 0.5s forwards;
-	$distanceX: if($name == "open", -50px, 50px);
-	$totalX: $distance + $distanceX;
+	// color: #a435f0;
+	animation: #{$name} 0.75s ease-in 0.5s forwards;
+
 	@keyframes #{$name} {
 		0% {
 			transform: translate(0px, 0px);
 		}
-		30% {
-			transform: translateX($distanceX);
+		50% {
+			transform: translate($distance, 0);
 		}
 		100% {
-			transform: translate($totalX, $distance);
+			transform: translate($distance, $distance);
 		}
 	}
 }
@@ -20,18 +19,30 @@
 .landing {
 	background-image: linear-gradient(#fff, #d9d9d9);
 	height: 100vh;
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		opacity: 0;
+		animation: landingImgOpacity 2s forwards;
+	}
 	&__content {
-		position: absolute;
-		top: 30%;
-		left: 50%;
-		font-family: $--ff-regular;
-		font-size: 50px;
-		margin: 0 -18px 0 -18px;
+		font-family: $--ff-light;
 		&--open {
-			@include animateBrackets(-100px, "open");
+			@include animateBrackets(-120px, "open");
 		}
 		&--close {
-			@include animateBrackets(100px, "close");
+			@include animateBrackets(120px, "close");
 		}
+	}
+}
+
+@keyframes landingImgOpacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }

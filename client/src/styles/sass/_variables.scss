@@ -8,6 +8,18 @@
 	src: url("../../fonts/Avenir\ Heavy.ttf");
 }
 
+@font-face {
+	font-family: avenirLight;
+	src: url("../../fonts/Avenir\ Light.ttf");
+}
+
+@font-face {
+	font-family: avenirBook;
+	src: url("../../fonts/Avenir\ Book.ttf");
+}
+
 $--ff-regular: avenirRegular;
+$--ff-book: avenirBook;
+$--ff-light: avenirLight;
 $--ff-heavy: avenirHeavy;
 $--fc-regular: #000;
