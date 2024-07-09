@@ -4,6 +4,8 @@
 	height: 1px;
 	width: 100%;
 	border: 1px solid #fff;
+	transform-origin: right;
+	transition: all 200ms ease-out;
 }
 
 .header {
@@ -47,8 +49,14 @@
 	}
 }
 
-.animate__top--open {
+.burger__top--open {
+	transform: rotate(-45deg);
 }
 
-.animate__top--close {
+.burger__close {
+	transform: rotate(0deg);
+}
+
+.burger__bottom--open {
+	transform: rotate(45deg);
 }

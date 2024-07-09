@@ -21,7 +21,7 @@ export interface OpacityOn {
 
 export interface OpacityOff {
     opacity: string,
-    transition: string
+    transition?: string
 }
 
 export interface TearDown {

@@ -2,7 +2,7 @@
 import Landing from "./landing/Landing";
 import { useSelector } from 'react-redux';
 import { RootState } from "../store/store";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Bio from "./bio/Bio";
 import Contact from "./contact/Contact";
 import Film from "./film/Film";
