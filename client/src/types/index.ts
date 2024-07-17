@@ -27,3 +27,12 @@ export interface OpacityOff {
 export interface TearDown {
     display: string
 }
+
+export interface MenuPosition {
+    top: string
+}
+
+export interface Dimensions {
+    width: number,
+    height: number
+}

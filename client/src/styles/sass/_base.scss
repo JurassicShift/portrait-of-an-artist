@@ -1,5 +1,10 @@
 /* https://piccalil.li/blog/a-modern-css-reset */
 
+@font-face {
+	font-family: avenirLight;
+	src: url("../../fonts/Avenir\ Light.ttf");
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -29,6 +34,7 @@ html:focus-within {
 html,
 body {
 	height: 100%;
+	font-family: avenirLight;
 }
 
 /* Set core body defaults */

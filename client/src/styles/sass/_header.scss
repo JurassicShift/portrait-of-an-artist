@@ -1,0 +1,66 @@
+@mixin burgerStyle {
+	position: absolute;
+	margin: 10px 0;
+	height: 1px;
+	width: 100%;
+	border: 1px solid #fff;
+	transform-origin: right;
+	transition: all 150ms ease-out;
+}
+
+.header {
+	&__menu {
+		display: flex;
+		justify-content: flex-end;
+		font-family: $--ff-light;
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #fff;
+		width: 100%;
+		padding: 5vw 6vw;
+
+		&--wide {
+			@extend .header__menu;
+			justify-content: center;
+			// display: none;
+		}
+	}
+
+	&__button {
+		position: relative;
+		top: 10px;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		height: 35px;
+		width: 35px;
+		z-index: 3;
+
+		&--top {
+			@include burgerStyle;
+			top: -12px;
+		}
+		&--patty {
+			@include burgerStyle;
+			top: 0px;
+		}
+		&--bottom {
+			@include burgerStyle;
+			top: 12px;
+		}
+	}
+}
+
+.burger__top--open {
+	transform: rotate(-45deg);
+}
+
+.burger__close {
+	transform: rotate(0deg);
+}
+
+.burger__bottom--open {
+	transform: rotate(45deg);
+}

@@ -1,62 +1,66 @@
-@mixin burgerStyle {
-	position: absolute;
-	margin: 10px 0;
-	height: 1px;
-	width: 100%;
-	border: 1px solid #fff;
-	transform-origin: right;
-	transition: all 200ms ease-out;
-}
+// //dddace
 
-.header {
-	display: flex;
-	justify-content: space-between;
-	font-family: $--ff-light;
-	z-index: 1;
-	position: absolute;
-	top: 0;
-	left: 0;
+// //52514d
+
+@mixin linkStyle($display) {
+	display: $display;
+	width: 100%;
+	text-decoration: none;
 	color: #fff;
+	letter-spacing: 2px;
+	font-size: 15px;
+
+	&.active {
+		padding-bottom: 3px;
+		border-bottom: 2px solid #fff;
+	}
+}
+
+.nav {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
 	width: 100%;
-	padding: 5vw 6vw;
 
-	&__text {
-		font-size: 19px;
-		letter-spacing: 2px;
+	&--wide {
+		@extend .nav;
+		flex-direction: row;
 	}
 
-	&__button {
+	&__menu {
 		position: relative;
-		top: 10px;
-		cursor: pointer;
-		background-color: transparent;
-		border: none;
-		height: 35px;
-		width: 35px;
+		// top: 0px;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// margin: -10vw 0 0 -15vw;
+		transition: top 0.3s ease-out;
+		z-index: 5;
 
-		&--top {
-			@include burgerStyle;
-			top: -12px;
-		}
-		&--patty {
-			@include burgerStyle;
-			top: 0px;
-		}
-		&--bottom {
-			@include burgerStyle;
-			top: 12px;
+		&--wide {
+			flex-direction: row;
+			justify-content: space-around;
+			margin-top: 5vw;
+			z-index: 5;
 		}
 	}
-}
 
-.burger__top--open {
-	transform: rotate(-45deg);
-}
+	&__link {
+		margin: 5px 0;
+		transition: opacity 0.3s ease-out;
+		a {
+			@include linkStyle("block");
+		}
 
-.burger__close {
-	transform: rotate(0deg);
-}
-
-.burger__bottom--open {
-	transform: rotate(45deg);
+		&--wide {
+			display: inline-block;
+			margin: 3px 10px;
+			a {
+				@include linkStyle("inline");
+			}
+		}
+	}
 }
